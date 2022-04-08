@@ -1,0 +1,58 @@
+@use "./variables" as variable;
+.container {
+    position: relative;
+    overflow: hidden;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.card {
+    float: left;
+    width: 50%;
+    position: relative;
+    z-index: 10;
+}
+
+.brandContainer {
+    padding: 20vmin 5vmin 10vmin 15vmin;
+}
+
+.brand {
+    font-family: "Kaushan Script";
+    font-size: 9vmin;
+    font-weight: 600;
+    letter-spacing: 0.4vmin;
+    color: variable.$primary-color;
+}
+
+.tagline {
+    font-family: "Kaushan Script";
+    font-size: 7vmin;
+    color: variable.$secondary-color;
+}
+
+.desc {
+    font-size: 4vmin;
+    margin-bottom: 4vmin;
+}
+
+.button {
+    border: none;
+    background-color: variable.$primary-color;
+    color: variable.$whitesmoke;
+    font-size: 3vmin;
+    min-width: 10vmin;
+    font-weight: bold;
+    padding: 2vmin 4vmin;
+    border-radius: 4vmin;
+    cursor: pointer;
+}
+
+.imageContainer {
+    padding-right: 5vmin;
+    padding-top: 20vmin;
+    padding-bottom: 5vmin;
+}

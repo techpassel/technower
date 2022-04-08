@@ -1,0 +1,103 @@
+@use "./variables" as variable;
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.cardImage {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    padding: 5vmin 0vmin;
+}
+
+.cardForm {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.imageContainer {
+    padding: 12vmin 5vmin 5vmin 6vmin;
+    z-index: 10;
+    position: relative;
+    //By default, every element has a position of static. z-index only works on positioned elements 
+    //(relative, absolute, fixed, sticky etc.).So for that reason only we have used "position: relative".
+}
+
+.innerContainer {
+    z-index: 10;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2vh 0vh;
+    // background-color: rgba(22, 184, 0, 0.5);
+    border: 3vmin solid variable.$secondary-color;
+    margin: 15px;
+    border-radius: 5vmin;
+}
+
+.title{
+    font-family: "Kaushan Script";
+    font-size: 5vmin;
+    font-weight: 700;
+    border-bottom: 6px solid variable.$primary-color;
+    width: max-content;
+    margin-bottom: -1vh;
+    margin-top: 5vmin;
+}
+
+.form {
+    padding: 8vmin;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inputS {
+    flex: 1;
+    height: 8vmin;
+    padding-left: 10px;
+    display: flex;
+    margin-bottom: 3vmin;
+    font-size: 2.75vmin;
+    font-family: sans-serif;
+}
+
+@media only screen and (min-width: 781px) {
+    .inputS:first-child {
+        margin-right: 0.5vmin;
+    }
+}
+
+.inputL {
+    width: 100%;
+    height: 8vmin;
+    padding-left: 10px;
+    margin-bottom: 3vmin;
+    font-size: 2.75vmin;
+    font-family: sans-serif;
+}
+
+.textarea {
+    width: 100%;
+    padding: 10px 5px 10px 10px;
+    margin-bottom: 3vmin;
+    font-size: 2.75vmin;
+    font-family: sans-serif;
+}
+
+.button {
+    margin-top: 3vmin;
+    padding: 2vmin;
+    border: none;
+    border-radius: 5vmin;
+    color: variable.$whitesmoke;
+    background-color: variable.$primary-color;
+    width: 100%;
+    font-size: 3vmin;
+    font-weight: 600;
+    cursor: pointer;
+}

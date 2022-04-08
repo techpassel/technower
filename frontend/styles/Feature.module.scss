@@ -1,0 +1,64 @@
+@use "./variables" as variable;
+
+.container {
+    display: flex;
+    padding: 9vmin;
+}
+
+.cardL {
+    flex: 2;
+}
+
+.imageCard {
+    margin-top: 8vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cardS {
+    flex: 1;
+}
+
+.imgContainer {
+    width: 30%;
+    margin: 1vmin;
+    position: relative;
+}
+
+@media only screen and (max-width: 781px) {
+    .imgContainer {
+        width: 45%;
+    }
+
+    .imgContainer:nth-child(2) {
+        border-top-right-radius: 50%;
+        overflow: hidden;
+    }
+}
+@media only screen and (min-width: 781px) {
+    .imgContainer:nth-child(3) {
+        border-top-right-radius: 50%;
+        overflow: hidden;
+    }
+}
+.title {
+    font-size: 10vmin;
+}
+
+.desc {
+    font-size: 3.5vmin;
+}
+
+.button {
+    padding: 2vmin 4vmin;
+    border: none;
+    background-color: variable.$primary-color;
+    color: variable.$whitesmoke;
+    font-size: 3vmin;
+    font-weight: bold;
+    min-width: 10vmin;
+    border-radius: 2vmin;
+    margin-top: 5vmin;
+    cursor: pointer;
+}

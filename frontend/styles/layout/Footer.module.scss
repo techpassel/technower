@@ -1,0 +1,41 @@
+@use "../variables" as variable;
+
+.container {
+    min-height: 35vmin;
+    border-top: 3px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 3vmin;
+    padding: 8vmin 15vmin;
+    background-color: black;
+    color: variable.$whitesmoke;
+}
+
+.linkTitle {
+    // padding-top: 2vmin;
+    font-size: 3.5vmin;
+    text-decoration: underline;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+}
+
+.linkText {
+    margin-right: 1vmin;
+}
+
+.cardL {
+    flex: 2;
+}
+
+.cardS {
+    flex: 1;
+}
+
+.cardItem {
+    height: 12vmin;
+    padding-left: 6vmin;
+}

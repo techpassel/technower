@@ -1,0 +1,95 @@
+@use "../variables" as variable;
+
+.container {
+    height: 8vmin;
+    background-color: black;
+    color: variable.$whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8vmin;
+    position: relative;
+    z-index: 50;
+}
+
+.listItem {
+    display: inline;
+    font-size: 2.8vmin;
+    font-weight: 500;
+    color: variable.$whitesmoke;
+    cursor: pointer;
+}
+
+.listItemLink {
+    padding: 2.6vmin 2vmin;
+    &:hover,
+    &:focus-within {
+        background-color: variable.$primary-color;
+    }
+}
+
+.signinButton {
+    padding: 1.7vmin 2vmin;
+    background-color: variable.$primary-color;
+    border: none;
+    border-radius: 1vmin;
+    font-size: 2.7vmin;
+    font-weight: 600;
+    color: variable.$whitesmoke;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.dropdown {
+    display: inline;
+    font-size: 2.8vmin;
+    font-weight: 500;
+    color: variable.$whitesmoke;
+    cursor: pointer;
+    padding: 2.6vmin 2vmin;
+    position: relative;
+
+    &:hover,
+    &:focus-within {
+        background-color: variable.$primary-color;
+        .dropdownMenu {
+            opacity: 1;
+            transform: rotateX(0) translateX(-50%);
+            visibility: visible;
+        }
+    }
+
+    .dropdownMenu {
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0.15em 0.25em rgba(black, 0.25);
+        padding: 0;
+        min-width: 15ch;
+        list-style: none;
+        position: absolute;
+        top: calc(100% + 0.05rem);
+        left: 50%;
+        z-index: 999;
+        // transform: translateX(-50%);
+        transform: rotateX(-90deg) translateX(-50%);
+        transform-origin: top center;
+        opacity: 0.3;
+        transition: 280ms all ease-out;
+        a {
+            color: #444;
+            display: block;
+            padding: 0.5em;
+            text-align: center;
+        }
+        .dropdownItem {
+            padding: 3px;
+            &:hover {
+                background-color: variable.$primary-color;
+            }
+        }
+    }
+
+    .dropdownTitle {
+        margin-right: 1vmin;
+    }
+}

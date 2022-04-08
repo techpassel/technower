@@ -1,0 +1,41 @@
+@use "/styles/variables" as variable;
+
+.container {
+    padding: 2vmin 15vmin;
+    text-align: center;
+}
+
+.title {
+    font-family: 'Kaushan Script';
+    font-size: 6vmin;
+    color: variable.$primary-color;
+}
+
+.details {
+    padding: 1vmin 3vmin;
+    font-size: 3.2vmin;
+}
+
+.button {
+    border: none;
+    background-color: variable.$primary-color;
+    color: variable.$whitesmoke;
+    font-size: 3vmin;
+    min-width: 12vmin;
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+.hrBorder {
+    height: 10px;
+    border: 1;
+    box-shadow: inset 0 9px 9px -3px variable.$secondary-color;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
