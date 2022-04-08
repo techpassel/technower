@@ -1,0 +1,1 @@
+Technower is a collaboration platform for technophiles. It is a platform where technowers collaborate together to make the learning and understanding of latest technologies easy and accessible for everyone. It is built using technologies Next.js(A jS framework based on react), Java(Spring boot) and Mysql.
