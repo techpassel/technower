@@ -1,17 +1,31 @@
 @use "./variables" as variable;
+// .container {
+//     position: relative;
+//     overflow: hidden;
+//     &:after {
+//         content: "";
+//         display: table;
+//         clear: both;
+//     }
+// }
+
+// .card {
+//     float: left;
+//     width: 50%;
+//     position: relative;
+//     z-index: 10;
+// }
+
 .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     position: relative;
     overflow: hidden;
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
 }
 
 .card {
-    float: left;
-    width: 50%;
+    flex: 1;
     position: relative;
     z-index: 10;
 }
@@ -51,7 +65,5 @@
 }
 
 .imageContainer {
-    padding-right: 5vmin;
-    padding-top: 20vmin;
-    padding-bottom: 5vmin;
+    padding: 5vmin 5vmin 5vmin 0vmin;
 }
