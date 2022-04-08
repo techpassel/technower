@@ -19,23 +19,52 @@ const Navbar = () => {
                     <Link href="/"><a className={styles.listItemLink}>Home</a></Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link href="/about"><a className={styles.listItemLink}>About</a></Link>
-                </li>
-                <li className={styles.listItem}>
-                    <Link href="/blogs"><a className={styles.listItemLink}>Blogs</a></Link>
+                    <Link href="/creators"><a className={styles.listItemLink}>Creators</a></Link>
                 </li>
                 <li className={styles.dropdown}>
-                    <span className={styles.dropdownTitle}>Category</span>
+                    <span className={styles.dropdownTitle}>Resourses</span>
                     <FontAwesomeIcon icon={faCaretDown} />
                     <ul className={styles.dropdownMenu} id="sweets-dropdown">
-                        <li className={styles.dropdownItem}><a href="#">Donuts</a></li>
-                        <li className={styles.dropdownItem}><a href="#">Cupcakes</a></li>
-                        <li className={styles.dropdownItem}><a href="#">Chocolate</a></li>
-                        <li className={styles.dropdownItem}><a href="#">Bonbons</a></li>
+                        <li className={styles.dropdownItem}>
+                            <Link href="/categories"><a>Categories</a></Link>
+                        </li>
+                        <li className={styles.dropdownItem}>
+                            <Link href="/blogs"><a>Blogs</a></Link>
+                        </li>
+                        <li className={styles.dropdownItem}>
+                            <Link href="/courses"><a>Courses</a></Link>
+                        </li>
+                        <li className={styles.dropdownItem}>
+                            <Link href="/technowers"><a>Technowers</a></Link>
+                        </li>
+                    </ul>
+                </li>
+                <li className={styles.dropdown}>
+                    <span className={styles.dropdownTitle}>User</span>
+                    <FontAwesomeIcon icon={faCaretDown} />
+                    <ul className={styles.dropdownMenu} id="sweets-dropdown">
+                        <li className={styles.dropdownItem}>
+                            <Link href="/profile"><a>Profile</a></Link>
+                        </li>
+                        <li className={styles.dropdownItem}>
+                            <Link href="/subscribed-categories"><a>Subscribed Categories</a></Link>
+                        </li>
+                        <li className={styles.dropdownItem}>
+                            <Link href="/subscribed-blogs"><a>Subscribed Blogs</a></Link>
+                        </li>
+                        <li className={styles.dropdownItem}>
+                            <Link href="/enrolled-courses"><a>Enrolled Courses</a></Link>
+                        </li>
+                        <li className={styles.dropdownItem}>
+                            <Link href="/user-blogs"><a>Your Blogs</a></Link>
+                        </li>
+                        <li className={styles.dropdownItem}>
+                            <Link href="/user-courses"><a>Your Courses</a></Link>
+                        </li>
                     </ul>
                 </li>
                 <li className={styles.listItem}>
-                    <Link href="/contact" passHref>
+                    <Link href="/login" passHref>
                         <button className={styles.signinButton}>Sign In</button>
                     </Link>
                 </li>

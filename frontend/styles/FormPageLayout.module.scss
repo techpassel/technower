@@ -2,6 +2,7 @@
 
 .container {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     position: relative;
 }
@@ -10,7 +11,6 @@
     flex: 1;
     overflow: hidden;
     position: relative;
-    padding: 5vmin 0vmin;
 }
 
 .cardForm {
@@ -21,10 +21,14 @@
 
 .imageContainer {
     padding: 12vmin 5vmin 5vmin 6vmin;
+    //Position is - top, right, bottom, left
     z-index: 10;
     position: relative;
-    //By default, every element has a position of static. z-index only works on positioned elements 
-    //(relative, absolute, fixed, sticky etc.).So for that reason only we have used "position: relative".
+    min-height: 100vmin;
+    display: flex;
+    align-items: center;
+    //By default, every element has a position of static. z-index only works on positioned elements only 
+    //(i.e on relative, absolute, fixed, sticky etc. only). So for that reason only we have used "position: relative".
 }
 
 .innerContainer {
@@ -34,10 +38,10 @@
     flex-direction: column;
     align-items: center;
     padding: 2vh 0vh;
-    // background-color: rgba(22, 184, 0, 0.5);
     border: 3vmin solid variable.$secondary-color;
     margin: 20px;
     border-radius: 5vmin;
+    padding: 8vmin;
 }
 
 .title{
@@ -46,12 +50,12 @@
     font-weight: 700;
     border-bottom: 6px solid variable.$primary-color;
     width: max-content;
-    margin-bottom: -1vh;
-    margin-top: 5vmin;
+    margin-bottom: 6vh;
+    margin-top: -1vh;
 }
 
 .form {
-    padding: 8vmin;
+    padding-bottom: 3vmin;
     display: flex;
     flex-wrap: wrap;
 }
@@ -100,4 +104,15 @@
     font-size: 3vmin;
     font-weight: 600;
     cursor: pointer;
+}
+
+.authLink {
+    font-weight: bold;
+    color: variable.$primary-color;
+    text-decoration: underline;
+}
+
+.authLinkContainer {
+    font-weight: bold;
+    padding-bottom: 3vmin;
 }

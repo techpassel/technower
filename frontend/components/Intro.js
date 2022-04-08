@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Circle from './Circle';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 const Intro = () => {
     return (
@@ -21,7 +22,11 @@ const Intro = () => {
                         Are you a knower of technology or wanna be the one? Join us and be the part of growing community of technowers.
                     </p>
                     <div>
-                        <button className={styles.button}>Join<FontAwesomeIcon style={{ 'marginLeft': "5px" }} icon={faArrowRight} /></button>
+                        <button className={styles.button}>
+                            <Link href="/signup">
+                                <a>Join<FontAwesomeIcon style={{ 'marginLeft': "5px" }} icon={faArrowRight} /></a>
+                            </Link>
+                        </button>
                     </div>
                 </div>
             </div>
