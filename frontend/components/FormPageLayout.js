@@ -9,7 +9,7 @@ const FormPageLayout = ({ children, image={image}, pageTitle={title} }) => {
     //If you take some other name then you will get error.  
     return (
         <div className={styles.container}>
-            <AppHead title={pageTitle} />
+            <AppHead title={pageTitle} description={`${pageTitle} of technower.`} />
             <div className={styles.cardImage}>
                 <Circle left="-60vh" />
                 <div className={styles.imageContainer}>
