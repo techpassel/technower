@@ -80,7 +80,7 @@ public class JwtProvider {
         try {
             return (PrivateKey) keyStore.getKey(keyAlias, privateKeyPassphrase.toCharArray());
         } catch (KeyStoreException | NoSuchAlgorithmException  | UnrecoverableKeyException e) {
-            throw new BackendException("Exception occurred while retrieving public key from keystore", e);
+            throw new BackendException("Exception occurred while retrieving private key from keystore", e);
         }
     }
 

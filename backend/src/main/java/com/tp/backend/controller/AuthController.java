@@ -48,10 +48,9 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody LoginRequestDto loginRequestDto) {
+    public ResponseEntity<?> login(@RequestBody LoginRequestDto loginRequestDto) {
         try {
-            LoginResponseDto resp = authService.login(loginRequestDto);
-            return ResponseEntity.ok(resp.toString());
+            return ResponseEntity.status(HttpStatus.OK).body(authService.login(loginRequestDto));
         } catch (BadCredentialsException e) {
             return new ResponseEntity<>("Incorrect email or password.", HttpStatus.UNAUTHORIZED);
         } catch (BackendException e) {
@@ -63,7 +62,5 @@ public class AuthController {
             return new ResponseEntity<>("Some error occurred.Please try again.", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
-
 
 }
