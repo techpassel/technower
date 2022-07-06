@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../styles/Intro.module.scss'
-import sideImage from '../public/images/side_img.png';
+import sideImageOriginal from '../public/images/original.svg';
 import Image from 'next/image'
 import Circle from './Circle';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -32,7 +32,7 @@ const Intro = () => {
             </div>
             <div className={styles.card}>
                 <div className={styles.imageContainer}>
-                    <Image src={sideImage} alt="Technower image" />
+                    <Image src={sideImageOriginal} alt="Technower image" />
                 </div>
             </div>
         </div>

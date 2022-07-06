@@ -8,16 +8,14 @@ const contact = () => {
         <div>
             <FormPageLayout image={contactImage} pageTitle="Contact Page">
                 <h1 className={styles.title}>Contact Us</h1>
-                <div className={styles.formContainer}>
-                    <form className={styles.form}>
-                        <input className={styles.inputS} placeholder="Name" />
-                        <input className={styles.inputS} placeholder="Phone" />
-                        <input className={styles.inputL} placeholder="Email" />
-                        <input className={styles.inputL} placeholder="Subject" />
-                        <textarea className={styles.textarea} placeholder="Message" rows="6" />
-                        <button className={styles.button}>SUBMIT</button>
-                    </form>
-                </div>
+                <form className={styles.form}>
+                    <input className={styles.inputS} placeholder="Name" />
+                    <input className={styles.inputS} placeholder="Phone" />
+                    <input className={styles.inputL} placeholder="Email" />
+                    <input className={styles.inputL} placeholder="Subject" />
+                    <textarea className={styles.textarea} placeholder="Message" rows="6" />
+                    <button className={styles.button}>SUBMIT</button>
+                </form>
             </FormPageLayout>
         </div>
     )

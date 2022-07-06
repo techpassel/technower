@@ -46,7 +46,6 @@ const Feature = ({ feature }) => {
 export const getStaticPaths = () => {
     const features = data;
     const paths = features.map((post) => ({ params: { name: post.name } }));
-
     return { paths, fallback: false };
 }
 

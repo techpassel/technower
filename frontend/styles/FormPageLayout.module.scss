@@ -26,9 +26,8 @@
     position: relative;
     min-height: 100vmin;
     display: flex;
-    align-items: center;
     //By default, every element has a position of static. z-index only works on positioned elements only 
-    //(i.e on relative, absolute, fixed, sticky etc. only). So for that reason only we have used "position: relative".
+    //(i.e on relative, absolute, fixed, sticky etc. only). So for that reason only we have used "position: relative" here.
 }
 
 .innerContainer {
@@ -37,7 +36,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2vh 0vh;
     border: 3vmin solid variable.$secondary-color;
     margin: 20px;
     border-radius: 5vmin;
@@ -61,18 +59,25 @@
 }
 
 .inputS {
-    flex: 1;
     height: 8vmin;
     padding-left: 10px;
-    display: flex;
     margin-bottom: 3vmin;
     font-size: 2.75vmin;
     font-family: sans-serif;
 }
 
 @media only screen and (min-width: 781px) {
+    .inputS {
+        flex: 1;
+    }
     .inputS:first-child {
         margin-right: 0.5vmin;
+    }
+}
+
+@media only screen and (min-width: 781px) {
+    .inputS {
+        width: 100%;
     }
 }
 
@@ -114,5 +119,6 @@
 
 .authLinkContainer {
     font-weight: bold;
-    padding-bottom: 3vmin;
+    padding-top: 3vmin;
+    padding-bottom: 1vmin;
 }

@@ -1,0 +1,14 @@
+@use "./variables" as variable;
+
+.container {
+    padding: 5vw 8vw;
+    background-color: rgba(250, 15, 38, 0.3);
+    min-height: calc(100vh - 50px);
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 8vw 8vw;
+        justify-content: center;
+    }
+}

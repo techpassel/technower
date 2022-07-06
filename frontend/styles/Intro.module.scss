@@ -1,20 +1,23 @@
 @use "./variables" as variable;
-// .container {
-//     position: relative;
-//     overflow: hidden;
-//     &:after {
-//         content: "";
-//         display: table;
-//         clear: both;
-//     }
-// }
+/*
+//Another way to divide screen into two equal parts.
+.container {
+    position: relative;
+    overflow: hidden;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
 
-// .card {
-//     float: left;
-//     width: 50%;
-//     position: relative;
-//     z-index: 10;
-// }
+.card {
+    float: left;
+    width: 50%;
+    position: relative;
+    z-index: 10;
+}
+*/
 
 .container {
     display: flex;
@@ -62,8 +65,10 @@
     padding: 2vmin 4vmin;
     border-radius: 4vmin;
     cursor: pointer;
+    // box-shadow: 0 4px 12px 0 rgba(250, 15, 38, 0.9);
+    // transition: 0.3s;
 }
 
 .imageContainer {
-    padding: 5vmin 5vmin 5vmin 0vmin;
+    padding: 15vmin 5vmin 15vmin 0vmin;
 }
