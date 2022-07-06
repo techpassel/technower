@@ -19,7 +19,7 @@ const Navbar = () => {
                     <Link href="/"><a className={styles.listItemLink}>Home</a></Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link href="/creators"><a className={styles.listItemLink}>Creation Studio</a></Link>
+                    <Link href="/creation"><a className={styles.listItemLink}>Creation Zone</a></Link>
                 </li>
                 <li className={styles.dropdown}>
                     <span className={styles.dropdownTitle}>Resourses</span>

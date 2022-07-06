@@ -27,7 +27,7 @@
     min-height: 100vmin;
     display: flex;
     //By default, every element has a position of static. z-index only works on positioned elements only 
-    //(i.e on relative, absolute, fixed, sticky etc. only). So for that reason only we have used "position: relative".
+    //(i.e on relative, absolute, fixed, sticky etc. only). So for that reason only we have used "position: relative" here.
 }
 
 .innerContainer {
@@ -36,7 +36,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2vh 0vh;
     border: 3vmin solid variable.$secondary-color;
     margin: 20px;
     border-radius: 5vmin;

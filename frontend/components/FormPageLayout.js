@@ -11,7 +11,7 @@ const FormPageLayout = ({ children, image={image}, pageTitle={title} }) => {
         <div className={styles.container}>
             <AppHead title={pageTitle} description={`${pageTitle} of technower.`} />
             <div className={styles.cardImage}>
-                <Circle left="-60vh" />
+                <Circle left="-60vh" opacity="0.4" />
                 <div className={styles.imageContainer}>
                     <Image src={image} alt="contact" className={styles.image} />
                 </div>

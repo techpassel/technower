@@ -48,6 +48,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     */
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        // configure AuthenticationManager so that it knows from where to load user for matching credentials
         auth.userDetailsService(userDetailsService);
     }
 
