@@ -1,31 +1,19 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import 'react-quill/dist/quill.snow.css'
-import dynamic from 'next/dynamic'
 import katex from "katex";
 import "katex/dist/katex.min.css";
-
-const QuillEditor = dynamic(import('react-quill'), {
-    ssr: false,
-    loading: () => <p>Loading ...</p>,
-})
-/*
-  Here we are importing react-quill dynamically and storing it in a variable "QuillEditor". 
-  Unlike regular import modules, dynamic imports are flexible about when and how they are loaded. 
-  Instead of being forced to load the module file at read time, dynamic imports can be requested 
-  at the time of use. By code splitting the module into a separate bundle file it can be fetched 
-  separately which reduces the initial page load.
-  Here "ssr: false" is used to disable server-rendering which is part of . 
-  This is useful if an external dependency or component relies on browser APIs like 'window'.
-*/
 
 const Editor = () => {
     let previousValue = "";
     const [editorText, setEditorText] = useState(previousValue);
-    useEffect(() => {
-        window.katex = katex;
-    }, []);
+    const quillRef = useRef(null);
+    let QuillEditor = null;
 
-    const quillRef = useRef();
+    if (typeof window !== 'undefined') {
+        QuillEditor = require('react-quill');
+        window.katex = katex;
+    }
+
     const saveEditor = () => {
         console.log(editorText);
         //Final editor content on click of save button.
@@ -34,8 +22,6 @@ const Editor = () => {
     const imageHandler = () => {
         // get editor
         const editor = quillRef.current.getEditor();
-        console.log(editor);
-
         const input = document.createElement("input");
         input.setAttribute("type", "file");
         input.setAttribute("accept", "image/*");
@@ -44,7 +30,7 @@ const Editor = () => {
         input.onchange = async () => {
             const file = input.files[0];
             try {
-                const link = "";
+                const link = "https://iph.href.lu/200x200";
                 //In the above line make an API call, save the "file" on server 
                 //and get the link and finally store that in the "link" variable.
                 editor.insertEmbed(editor.getSelection(), "image", link);
@@ -54,11 +40,7 @@ const Editor = () => {
         };
     };
 
-    const aaa = (val) => {
-        setEditorText(val);
-    }
-
-    const modules = {
+    const modules = useMemo(() => ({
         toolbar: {
             container: [
                 ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
@@ -76,15 +58,16 @@ const Editor = () => {
                 ['link', 'image', 'video', "formula"],
                 ['clean'],
             ],
-            // handlers: {
-            //     image: imageHandler
-            // }
+            handlers: {
+                image: imageHandler
+            }
         },
         clipboard: {
             // toggle to add extra line breaks when pasting HTML:
             matchVisual: false,
         },
-    }
+    }), []);
+
     const formats = [
         'header',
         'font',
@@ -110,21 +93,25 @@ const Editor = () => {
         'indent'
     ]
 
-    return (
-        <>
-            <QuillEditor
-                ref={quillRef} // must pass ref here
-                modules={modules}
-                formats={formats}
-                theme="snow"
-                placeholder="Write your content here."
-                value={editorText}
-                onChange={aaa}
-                style={{ backgroundColor: 'white' }}
-            />
-            <button onClick={saveEditor}>Save</button>
-        </>
-    )
+    if (QuillEditor) {
+        return (
+            <>
+                <QuillEditor
+                    ref={quillRef} // must pass ref here
+                    modules={modules}
+                    formats={formats}
+                    theme="snow"
+                    placeholder="Write your content here."
+                    value={editorText}
+                    onChange={(val) => setEditorText(val)}
+                    style={{ backgroundColor: 'white' }}
+                />
+                <button onClick={saveEditor}>Save</button>
+            </>
+        )
+    } else {
+        return <textarea value={editorText} onChange={(val) => setEditorText(val)} />
+    }
 }
 
 export default Editor
