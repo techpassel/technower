@@ -3,7 +3,9 @@ import styles from '../../styles/creation/CreationBlog.module.scss'
 
 const blog = () => {
   return (
-    <div className=''>blog</div>
+    <div className={styles.container}>
+      
+    </div>
   )
 }
 

@@ -1,13 +1,18 @@
 @use "./variables" as variable;
-@import './common';
-.innerContainer {
+
+.container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding: 5vw 6vw;
+    background-color: rgba(250, 15, 38, 0.3);
+    min-height: calc(100vh - 50px);
+    gap: 3vw;
 }
 
 @media screen and (max-width: 768px) {
-    .innerContainer {
+    .container {
+        padding: 8vw 8vw;
         justify-content: center;
     }
 }
@@ -15,13 +20,13 @@
 .card {
     display: flex;
     flex-direction: column;
-    width: clamp(20rem, calc(20rem + 2vw), 22rem);
+    width: clamp(20rem, calc(20rem + 3vw), 23rem);
     overflow: hidden;
     box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
     border-radius: 1em;
     background: #ece9e6;
     background: linear-gradient(to right, #ffffff, #ece9e6);
-    margin-bottom: 5vmin;
+    // margin-bottom: 7vmin;
 }
 
 .cardBody {
@@ -85,4 +90,5 @@
     font-size: 0.85rem;
     color: #545454;
     font-weight: 400;
+    margin-left: 2px;
 }
