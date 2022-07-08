@@ -34,6 +34,9 @@ public class User extends DateBaseEntity{
     @Column(unique = true)
     private String email;
 
+    @NotEmpty(message = "Phone is required")
+    private String phone;
+
     private boolean enabled;
 
     @Column(name= "usertype")

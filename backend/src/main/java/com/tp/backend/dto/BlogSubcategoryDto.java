@@ -7,9 +7,10 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 @ToString
-public class BlogCategoryDto {
+public class BlogSubcategoryDto {
     private Long id;
     private String name;
     private String description;
+    private Long categoryId;
     private Integer numberOfPosts;
 }

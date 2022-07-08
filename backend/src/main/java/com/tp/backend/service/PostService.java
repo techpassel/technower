@@ -6,9 +6,11 @@ import com.tp.backend.exception.BackendException;
 import com.tp.backend.mapper.PostMapper;
 import com.tp.backend.model.Category;
 import com.tp.backend.model.Post;
+import com.tp.backend.model.Subcategory;
 import com.tp.backend.model.User;
 import com.tp.backend.repository.CategoryRepository;
 import com.tp.backend.repository.PostRepository;
+import com.tp.backend.repository.SubcategoryRepository;
 import com.tp.backend.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,6 +27,7 @@ import java.util.stream.Collectors;
 public class PostService {
     private final PostRepository postRepository;
     private final CategoryRepository categoryRepository;
+    private final SubcategoryRepository subcategoryRepository;
     private final UserRepository userRepository;
     private final AuthService authService;
     private final PostMapper postMapper;
@@ -34,8 +37,11 @@ public class PostService {
         Category category = categoryRepository.findById(postRequestDto.getCategoryId())
                 .orElseThrow(() -> new BackendException("Category not found exception : "
                         +postRequestDto.getCategoryId()));
+        Subcategory subcategory = subcategoryRepository.findById(postRequestDto.getSubcategoryId())
+                .orElseThrow(() -> new BackendException("Subcategory not found exception : "
+                        +postRequestDto.getSubcategoryId()));
         User user = authService.getCurrentUser();
-        postRepository.save(postMapper.mapToModel(postRequestDto, category, user));
+        postRepository.save(postMapper.mapToModel(postRequestDto, category, subcategory, user));
     }
 
     @Transactional(readOnly = true)
@@ -59,6 +65,14 @@ public class PostService {
         Category category = categoryRepository.findById(categoryId)
                 .orElseThrow(() -> new BackendException("Category not found exception : "+categoryId));
         List<Post> posts = postRepository.findAllByCategory(category);
+        return posts.stream().map(postMapper::mapToDto).collect(Collectors.toList());
+    }
+
+    @Transactional(readOnly = true)
+    public List<PostResponseDto> getPostsBySubategory(Long subcategoryId) {
+        Subcategory subcategory = subcategoryRepository.findById(subcategoryId).orElseThrow
+                (() -> new BackendException("Subcategory not found."));
+        List<Post> posts = postRepository.findAllBySubcategory(subcategory);
         return posts.stream().map(postMapper::mapToDto).collect(Collectors.toList());
     }
 

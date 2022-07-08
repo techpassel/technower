@@ -27,11 +27,13 @@ public abstract class PostMapper {
     @Mapping(target = "updatedAt", ignore = true)
     @Mapping(target = "description", source = "postRequestDto.description")
     @Mapping(target = "category", source = "category")
+    @Mapping(target = "subcategory", source = "subcategory")
     @Mapping(target = "user", source = "user")
     @Mapping(target = "id", source = "postRequestDto.id")
-    public abstract Post mapToModel(PostRequestDto postRequestDto, Category category, User user);
+    public abstract Post mapToModel(PostRequestDto postRequestDto, Category category, Subcategory subcategory, User user);
 
     @Mapping(target = "category", source = "category.name")
+    @Mapping(target = "subcategory", source = "subcategory.name")
     @Mapping(target = "name", source = "user.name")
     @Mapping(target = "username", source = "user.username")
     @Mapping(target = "commentCount", expression = "java(getCommentsCount(post))")

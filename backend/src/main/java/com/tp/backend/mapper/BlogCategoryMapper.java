@@ -19,5 +19,6 @@ public abstract class BlogCategoryMapper {
 
     @InheritInverseConfiguration
     @Mapping(target = "posts", ignore = true)
+    @Mapping(target = "subcategories", ignore = true)
     public abstract Category mapDtoToCategory(BlogCategoryDto blogCategoryDto);
 }

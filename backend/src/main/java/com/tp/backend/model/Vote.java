@@ -19,6 +19,7 @@ public class Vote {
     Long id;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     private VoteType voteType;
 
     @Null

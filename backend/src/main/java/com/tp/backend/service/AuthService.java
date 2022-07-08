@@ -53,6 +53,10 @@ public class AuthService {
         if(emailUser.isPresent()){
             throw new BackendException("Email already exist");
         }
+        Optional<User> phoneUser = userRepository.findByPhone(signupRequestDto.getPhone());
+        if(phoneUser.isPresent()){
+            throw new BackendException("Phone number already exist");
+        }
         String email = signupRequestDto.getEmail();
         //Functionality to generate a random username
         String username = email.split("@")[0].replaceAll("[^a-zA-Z0-9]", "");
@@ -68,6 +72,7 @@ public class AuthService {
         user.setName(signupRequestDto.getName());
         user.setPassword(passwordEncoder.encode(signupRequestDto.getPassword()));
         user.setEmail(email);
+        user.setPhone(signupRequestDto.getPhone());
         user.setUserType(UserType.User);
         user.setEnabled(false);
         user.setUsername(username);
@@ -109,7 +114,7 @@ public class AuthService {
 
     public void fetchUserAndEnable(VerificationToken verificationToken){
         Optional<User> tokenUser = userRepository.findById(verificationToken.getUser().getId());
-        tokenUser.orElseThrow(() -> new BackendException("User not found.Please signup again."));
+        tokenUser.orElseThrow(() -> new BackendException("User not found. Please signup again."));
         User user = tokenUser.get();
         user.setEnabled(true);
         userRepository.save(user);

@@ -20,7 +20,6 @@ const Editor = () => {
     }
 
     const imageHandler = () => {
-        // get editor
         const editor = quillRef.current.getEditor();
         const input = document.createElement("input");
         input.setAttribute("type", "file");
@@ -50,8 +49,8 @@ const Editor = () => {
                 [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
                 [{ 'size': ['small', false, 'large', 'huge'] }],
                 [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-                [{ 'script': 'sub' }, { 'script': 'super' }],      // superscript/subscript
-                [{ 'indent': '-1' }, { 'indent': '+1' }],          // outdent/indent
+                [{ 'script': 'sub' }, { 'script': 'super' }],     // superscript/subscript
+                [{ 'indent': '-1' }, { 'indent': '+1' }],         // outdent/indent
                 [{ 'direction': 'rtl' }],                         // text direction
 
                 [{ 'align': [] }],
