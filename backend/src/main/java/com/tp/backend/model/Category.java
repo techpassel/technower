@@ -12,7 +12,7 @@ import java.util.List;
 @Builder
 @EqualsAndHashCode()
 @Table(name = "category")
-public class Category extends DateBaseEntity{
+public class Category extends DateAuthorBaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
