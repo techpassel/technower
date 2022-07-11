@@ -12,7 +12,7 @@ const Footer = () => {
       <div className={styles.cardL}>
         <Link href="/">
           <a>
-            <Image src="/images/Technower_name_logo.png" alt='Technower logo' width="210vmin" height="45vmin" />
+            <Image quality={100} priority={true}src="/images/Technower_name_logo.png" alt='Technower logo' width="210vmin" height="45vmin" />
           </a>
         </Link>
         <p>Have any question, query or doubt?</p>

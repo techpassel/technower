@@ -109,7 +109,7 @@ const Editor = () => {
             </>
         )
     } else {
-        return <textarea value={editorText} onChange={(val) => setEditorText(val)} />
+        return <p>loading...</p>
     }
 }
 

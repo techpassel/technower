@@ -9,8 +9,12 @@ const resetPassword = () => {
         <FormPageLayout image={authImage} pageTitle="Reset Password Page">
             <h1 className={styles.title}>Reset Password</h1>
             <form className={styles.form}>
-                <input className={styles.inputL} placeholder="Enter new password" />
-                <input className={styles.inputL} placeholder="Confirm new password" />
+                <div className={styles.formItem}>
+                    <input className={styles.inputL} placeholder="Enter new password" />
+                </div>
+                <div className={styles.formItem}>
+                    <input className={styles.inputL} placeholder="Confirm new password" />
+                </div>
                 <button className={styles.button}>SUBMIT</button>
             </form>
             <span className={styles.authLinkContainer}>Want to retry login? <Link href='/login'><a className={styles.authLink}>Login</a></Link></span>

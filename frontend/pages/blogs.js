@@ -13,7 +13,7 @@ const blogs = () => {
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(e => (
                 <div key={e} className={styles.card}>
                     <div>
-                        <Image src="https://source.unsplash.com/600x400/?computer" alt="card__image" width="600" height='400' objectFit='cover' />
+                        <Image quality={100} priority={true}src="https://source.unsplash.com/600x400/?computer" alt="card__image" width="600" height='400' objectFit='cover' />
                     </div>
                     <div className={styles.cardBody}>
                         <div>
@@ -31,7 +31,7 @@ const blogs = () => {
                     </div>
                     <div className={styles.cardFooter}>
                         <div className={styles.user}>
-                            <Image className={styles.userImage} alt="Avator" src={`/images/avatar.png`} width="60" height="60" objectFit="cover" />
+                            <Image quality={100} priority={true}className={styles.userImage} alt="Avator" src={`/images/avatar.png`} width="60" height="60" objectFit="cover" />
                             <div className={styles.userInfo}>
                                 <div>
                                     <span>Jane Doe</span><br />

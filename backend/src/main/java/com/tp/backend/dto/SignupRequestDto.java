@@ -12,7 +12,6 @@ import java.util.Locale;
 public class SignupRequestDto {
     private String name;
     private String email;
-
     private String phone;
     private String password;
     private UserType userType;

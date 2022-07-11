@@ -13,7 +13,7 @@ const FormPageLayout = ({ children, image={image}, pageTitle={title} }) => {
             <div className={styles.cardImage}>
                 <Circle left="-60vh" opacity="0.4" />
                 <div className={styles.imageContainer}>
-                    <Image src={image} alt="contact" className={styles.image} />
+                    <Image quality={100} priority={true}src={image} alt="contact" className={styles.image} />
                 </div>
             </div>
             <div className={styles.cardForm}>

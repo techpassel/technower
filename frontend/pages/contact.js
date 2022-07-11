@@ -9,11 +9,21 @@ const contact = () => {
             <FormPageLayout image={contactImage} pageTitle="Contact Page">
                 <h1 className={styles.title}>Contact Us</h1>
                 <form className={styles.form}>
-                    <input className={styles.inputS} placeholder="Name" />
-                    <input className={styles.inputS} placeholder="Phone" />
-                    <input className={styles.inputL} placeholder="Email" />
-                    <input className={styles.inputL} placeholder="Subject" />
-                    <textarea className={styles.textarea} placeholder="Message" rows="6" />
+                    <div className={styles.formItem}>
+                        <input className={styles.inputL} placeholder="Name" />
+                    </div>
+                    <div className={styles.formItem}>
+                        <input className={styles.inputL} placeholder="Email" />
+                    </div>
+                    <div className={styles.formItem}>
+                        <input className={styles.inputL} placeholder="Phone Number" />
+                    </div>
+                    <div className={styles.formItem}>
+                        <input className={styles.inputL} placeholder="Subject" />
+                    </div>
+                    <div className={styles.formItem}>
+                        <textarea className={styles.textarea} placeholder="Message" rows="6" />
+                    </div>
                     <button className={styles.button}>SUBMIT</button>
                 </form>
             </FormPageLayout>

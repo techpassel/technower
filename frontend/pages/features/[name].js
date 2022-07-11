@@ -15,7 +15,7 @@ const Feature = ({ feature }) => {
                         <div key={img.id} className={styles.imgContainer}>
                             {/* to use external images we need to set "images: { domains: ['images.pexels.com']}" 
                         in 'next.config.js' */}
-                            <Image src={img.url}
+                            <Image quality={100} priority={true}src={img.url}
                                 className={styles.image}
                                 alt={`img-${img.id}`}
                                 width="100%"

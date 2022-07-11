@@ -18,7 +18,7 @@ const Service = ({ services }) => {
                                 {service.video && false ? (
                                     <video src={service.video} autoPlay loop className={styles.video} />
                                 ) : (
-                                    <Image className={styles.image} alt={service.title} src={`/images/${service.photo}`} width="350vmin" height="350vmin" />
+                                    <Image quality={100} priority={true}className={styles.image} alt={service.title} src={`/images/${service.photo}`} width="350vmin" height="350vmin" />
                                 )}
                             </div>
                         </div>
