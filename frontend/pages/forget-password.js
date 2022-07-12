@@ -15,7 +15,9 @@ const forgetPassword = () => {
                 </div>
                 <button className={styles.button}>SUBMIT</button>
             </form>
-            <span className={styles.authLinkContainer}>Want to retry login? <Link href='/login'><a className={styles.authLink}>Click here</a></Link></span>
+            <span className={styles.authLinkContainer}>Want to retry login?
+                <Link href='/login'><a className={styles.authLink}>Click here</a></Link>
+            </span>
         </FormPageLayout>
     )
 }

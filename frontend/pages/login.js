@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 import { isValidEmail, parseQuesyString, capitalizeFirstLetter } from '../utils/commonUtil';
 import { loginAction } from '../store/actions/userAction';
 
-const login = ({ location, history }) => {
+const Login = ({ location, history }) => {
     const [submitted, setSubmitted] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -66,11 +66,11 @@ const login = ({ location, history }) => {
             }
         })
         if (errorCurrentState['email'].length == 0 && !isValidEmail(email)) {
-            errorCurrentState = { ...errorCurrentState, email: [...errorCurrentState['email'], "This is not a valid email address."] };
+            errorCurrentState = { ...errorCurrentState, email: [...errorCurrentState['email'], "Please enter a valid email address."] };
             errorCaught = true;
         }
         if (errorCurrentState['password'].length == 0 && password.length < 6) {
-            errorCurrentState = { ...errorCurrentState, password: [...errorCurrentState['password'], "password must be atleast 6 digits long."] };
+            errorCurrentState = { ...errorCurrentState, password: [...errorCurrentState['password'], "Password must be atleast 6 digits long."] };
             errorCaught = true;
         }
         setErrorMsg(errorCurrentState);
@@ -106,4 +106,4 @@ const login = ({ location, history }) => {
     )
 }
 
-export default login
+export default Login;
