@@ -3,6 +3,7 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+!**/src/main/resources/keys/
 
 ### STS ###
 .apt_generated
@@ -100,6 +101,7 @@ Thumbs.db
 # misc
 *.DS_Store
 **.pem
+**.jks
 
 # debug
 *npm-debug.log*
