@@ -13,14 +13,14 @@ const blogs = () => {
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(e => (
                 <div key={e} className={styles.card}>
                     <div>
-                        <Image quality={100} priority={true}src="https://source.unsplash.com/600x400/?computer" alt="card__image" width="600" height='400' objectFit='cover' />
+                        <Image quality={100} priority={true} src="https://source.unsplash.com/600x400/?computer" alt="card__image" width="600" height='400' objectFit='cover' />
                     </div>
                     <div className={styles.cardBody}>
                         <div>
                             <div>
                                 <span className={styles.category}>Technology</span>
                                 <span>
-                                    <span><FontAwesomeIcon style={{ 'marginLeft': "5px" }} icon={faArrowRight} />&nbsp; </span>
+                                    <span><FontAwesomeIcon style={{ 'marginLeft': "5px", height: "13px" }} icon={faArrowRight} />&nbsp; </span>
                                     <span className={styles.subcategory}>Java</span>
                                 </span>
                             </div>

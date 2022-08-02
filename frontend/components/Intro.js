@@ -32,7 +32,7 @@ const Intro = () => {
             </div>
             <div className={styles.card}>
                 <div className={styles.imageContainer}>
-                    <Image quality={100} priority={true}src={sideImageOriginal} alt="Technower image" />
+                    <Image quality={100} priority={true} src={sideImageOriginal} alt="Technower image" />
                 </div>
             </div>
         </div>

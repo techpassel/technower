@@ -1,2 +1,57 @@
 @use "../variables" as variable;
 @import "../common";
+
+.previewContainer {
+    background-color: white;
+    padding: 30px;
+    overflow: hidden;
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+}
+
+.previewBlog {
+    border-bottom: 2px solid black;
+    margin-bottom: 25px;
+}
+
+.buttons {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.btnEdit {
+    padding: 12px;
+    width: 120px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    background: variable.$primary-color;
+    color: #fff;
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
+    border-radius: 0.7em;
+}
+
+.btnSave {
+    padding: 12px;
+    width: 120px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    background: variable.$dark-blue;
+    color: #fff;
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
+    border-radius: 0.7em;
+}
+
+.btnPublish {
+    padding: 12px;
+    width: 120px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    background: variable.$secondary-color;
+    color: #fff;
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
+    border-radius: 0.7em;
+}

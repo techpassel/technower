@@ -32,3 +32,38 @@ a {
   background-color: variable.$primary-color;
 }
 
+.ql-align-center {
+  text-align: center;
+}
+
+.ql-video {
+  width: 64vw;
+  height: 36vw;
+}
+
+.ql-blog-video-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ql-blog-video {
+  width: 72vw;
+  height: 40.5vw;
+}
+
+.ql-blog-image-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ql-blog-image {
+  max-width: 64vw;
+}
+
+.ql-blog-link {
+  color: #0402a1;
+  text-decoration: underline;
+  cursor: pointer;
+}
